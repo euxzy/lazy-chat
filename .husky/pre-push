@@ -1,0 +1,7 @@
+bun run build || pnpm build ||
+(
+    echo '🔨❌ You have a problem in your build. Check your code 🔨❌
+          Fix your code and commit your changes.
+          Exec bun run build or pnpm build and try to push again.';
+    false;
+)

@@ -1,4 +1,4 @@
-import { pgTable, text, uuid, varchar } from 'drizzle-orm/pg-core';
+import { pgTable, text, uuid, varchar } from 'drizzle-orm/pg-core'
 
 export const user = pgTable('users', {
   id: uuid('id').primaryKey(),
@@ -7,4 +7,4 @@ export const user = pgTable('users', {
   username: varchar('name', { length: 150 }).unique(),
   photo: text('photo'),
   bio: varchar('bio', { length: 256 }),
-});
+})

@@ -1,0 +1,6 @@
+((bun lint-staged || pnpm lint-staged) && (bun lint || pnpm lint)) ||
+(
+    echo '🔨❌ You have a problem in your code. Check linter 🔨❌
+          Run bun lint or pnpm lint, add changes and try commit again.';
+    false;
+)
