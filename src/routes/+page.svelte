@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { config } from '$lib/config'
+  import { PUBLIC_WS_ENDPOINT as WS } from '$env/static/public'
   import { onMount } from 'svelte'
 
   onMount(() => {
-    const socket = new WebSocket(config.wsEndpoint)
+    const socket = new WebSocket(WS)
     socket.onopen = () => {
       console.log('connected')
     }
