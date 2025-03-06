@@ -1,14 +1,15 @@
 <script lang="ts">
+  import { config } from '$lib/config'
   import { onMount } from 'svelte'
 
   onMount(() => {
-    const socket = new WebSocket('ws://localhost:5173/ws')
+    const socket = new WebSocket(config.wsEndpoint)
     socket.onopen = () => {
       console.log('connected')
     }
 
     socket.onmessage = (event) => {
-      console.log('Message from server:', event)
+      console.log('Message from server:', event.data)
     }
 
     socket.onclose = () => {
@@ -16,7 +17,7 @@
     }
 
     setTimeout(() => {
-      socket.send('Hello from client')
+      socket.send(JSON.stringify({ test: 'hello' }))
     }, 5000)
   })
 </script>
