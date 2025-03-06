@@ -35,7 +35,7 @@ export class ServerSocket {
     this.startWS()
 
     this.server.on('upgrade', (req, socket, head) => {
-      const { pathname } = new URL(req.url || '', req.headers.origin)
+      const { pathname } = new URL(req.url || '', req.headers.origin || 'ws://0.0.0.0:3000')
 
       if (pathname === '/ws') {
         this.wss.handleUpgrade(req, socket, head, (ws) => {
