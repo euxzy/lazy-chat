@@ -1,5 +1,6 @@
 <script lang="ts">
   import { PUBLIC_WS_ENDPOINT as WS } from '$env/static/public'
+  import { Chat } from '$lib/components/chat'
   import { onMount } from 'svelte'
 
   onMount(() => {
@@ -22,5 +23,18 @@
   })
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<svelte:head>
+  <title>LazyChat</title>
+</svelte:head>
+
+<main class="bg-neutral-200">
+  <section class="container mx-auto flex h-svh bg-amber-50">
+    <div class="w-96">
+      <h1>LazyChat</h1>
+    </div>
+
+    <div class="flex-1 bg-amber-100">
+      <Chat />
+    </div>
+  </section>
+</main>
