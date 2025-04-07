@@ -1,10 +1,10 @@
 <script lang="ts">
-  interface Props {
+  export interface BubbleProps {
     message: string
     source: 'me' | 'other'
   }
 
-  let { message, source }: Props = $props()
+  let { message, source }: BubbleProps = $props()
 </script>
 
 <div class={['flex w-full', source == 'me' ? 'justify-end' : 'justify-start']}>

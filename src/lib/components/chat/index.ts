@@ -1,4 +1,4 @@
 import Chat from './index.svelte'
-import Bubble from './bubble.svelte'
+import Bubble, { type BubbleProps } from './bubble.svelte'
 
-export { Chat, Bubble }
+export { Chat, Bubble, type BubbleProps }

@@ -1,26 +1,5 @@
 <script lang="ts">
-  import { PUBLIC_WS_ENDPOINT as WS } from '$env/static/public'
   import { Chat } from '$lib/components/chat'
-  import { onMount } from 'svelte'
-
-  onMount(() => {
-    const socket = new WebSocket(WS)
-    socket.onopen = () => {
-      console.log('connected')
-    }
-
-    socket.onmessage = (event) => {
-      console.log('Message from server:', event.data)
-    }
-
-    socket.onclose = () => {
-      console.log('disconnected')
-    }
-
-    setTimeout(() => {
-      socket.send(JSON.stringify({ test: 'hello' }))
-    }, 5000)
-  })
 </script>
 
 <svelte:head>
