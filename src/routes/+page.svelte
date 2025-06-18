@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Chat } from '$lib/components/chat'
+  import Auth from '$lib/components/layout/auth/index.svelte'
 </script>
 
 <svelte:head>
@@ -16,4 +17,6 @@
       <Chat />
     </div>
   </section>
+
+  <Auth />
 </main>
