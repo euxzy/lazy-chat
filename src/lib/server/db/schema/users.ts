@@ -7,4 +7,5 @@ export const user = pgTable('users', {
   username: varchar('name', { length: 150 }).unique(),
   photo: text('photo'),
   bio: varchar('bio', { length: 256 }),
+  githubId: varchar('github_id', { length: 256 }),
 })

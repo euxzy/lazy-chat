@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.1",
+    "arctic": "^3.7.0",
     "drizzle-orm": "^0.44.2",
     "express": "^5.1.0",
     "ws": "^8.18.2"

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { enhance } from '$app/forms'
   import { Button } from '$lib/components/ui/button'
   import { Card, CardContent } from '$lib/components/ui/card'
   import { Input } from '$lib/components/ui/input'
@@ -32,8 +33,8 @@
           <span class="bg-background text-muted-foreground relative z-10 px-2"> Or </span>
         </div>
 
-        <form class="grid gap-4 sm:grid-cols-2">
-          <Button variant="outline" class="w-full cursor-pointer">
+        <form method="POST" class="grid gap-4 sm:grid-cols-2" use:enhance>
+          <Button type="submit" formaction="/auth/oauth?/github" variant="outline" class="w-full cursor-pointer">
             <Github />
             Continue with Github
           </Button>
